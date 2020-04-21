@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>Hexo安装并部署到GitHub | 迷凝相望</title>
+  <title>Hexo安装与GitHub部署 | 迷凝相望</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="WooDyy">
   <meta name="keywords" content="">
@@ -69,9 +69,9 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/blog/"><img src="/blog/images/avatar.jpeg"></a></div>
-    <span>2020-04-21</span>
-    <h2>Hexo安装并部署到Gi...</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/blog/tags/hexo-github/" rel="tag">hexo,github</a></div>
+    <span>2019-11-26</span>
+    <h2>Hexo安装与GitHu...</h2>
+    
     </div>
 </div>
 </div>
@@ -80,7 +80,7 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h5 id="安装blog-–-sheep"><a href="#安装blog-–-sheep" class="headerlink" title="安装blog – sheep"></a>安装blog – sheep</h5><ol>
+        <h4 id="安装blog"><a href="#安装blog" class="headerlink" title="安装blog"></a>安装blog</h4><ol>
 <li>安装node.js</li>
 <li>进入终端，sudo su</li>
 <li>切换到国内源：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
@@ -95,7 +95,7 @@
 <li>生成：hexo g</li>
 </ol>
 <hr>
-<h5 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h5><ol>
+<h4 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h4><ol>
 <li><p>在GitHub上新建仓库</p>
 </li>
 <li><p>安装部署插件：cnpm install –save hexo-deployer-git</p>
@@ -103,13 +103,13 @@
 <li><p>编辑配置文件：vim _config.yml</p>
 </li>
 <li><p>添加：在deploy下级添加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;yourID&#x2F;blog.git</span><br><span class="line">  Branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;meaning529&#x2F;blog.git</span><br><span class="line">  Branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>部署到远端：hexo d</p>
 </li>
 </ol>
 <hr>
-<h5 id="安装主题themes"><a href="#安装主题themes" class="headerlink" title="安装主题themes"></a>安装主题themes</h5><ol>
+<h4 id="安装主题themes"><a href="#安装主题themes" class="headerlink" title="安装主题themes"></a>安装主题themes</h4><ol>
 <li><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
 </li>
 <li><p>修改 _config.yml 文件</p>
@@ -125,7 +125,7 @@
 </li>
 </ol>
 <hr>
-<h5 id="部署公钥"><a href="#部署公钥" class="headerlink" title="部署公钥"></a>部署公钥</h5><ol>
+<h4 id="部署公钥"><a href="#部署公钥" class="headerlink" title="部署公钥"></a>部署公钥</h4><ol>
 <li><p>本地终端</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
 </li>
@@ -133,19 +133,21 @@
 </li>
 <li><p>粘贴到 GitHub下 <strong>Setting</strong> 下 <strong>Deploy Keys</strong> </p>
 </li>
-<li><p>访问验证： ssh <a href="mailto:git@github.com">git@github.com</a> ;</p>
+<li><p>访问验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
 </ol>
 <hr>
-<p>注意：</p>
-<ol>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
 <li><p>要安装gitnp</p>
 </li>
 <li><p>如果提示“no layout”，是由于更换主题后在themes没有or目录名错误导致的</p>
 </li>
 <li><p>如果部署后出现白板，在_config.yml 编辑如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;github.com&#x2F;yourID&#x2F;blog</span><br><span class="line">root: &#x2F;blog&#x2F;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;github.com&#x2F;meaning529&#x2F;blog</span><br><span class="line">root: &#x2F;blog&#x2F;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -157,12 +159,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/blog/2020/04/21/hello-world/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>No newer post</h3>
+						<h3>Hello W...</h3>
 					</div>
 				</div>
 			</div>
@@ -170,12 +172,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/blog/2020/04/21/hello-world/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>Hello W...</h3>
+						<h3>No older post</h3>
 					</div>
 				</div>
 			</div>
@@ -266,26 +268,7 @@
 }());
 </script>
 
-<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
-<script>
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'EUwMACVmhwraF3qQFnfxb3hs-gzGzoHsz',
-    appKey: 'onhYV6hYakWlevYTE660cgyw',
-    placeholder: '此处留言……',
-    avatar: 'identicon',
-    meta: guest,
-    pageSize: '10' || 10,
-    lang: 'zh-CN' || 'zh-cn'
-  });
-</script>
+
 
 </body>
 </html>
