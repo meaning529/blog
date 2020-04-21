@@ -146,6 +146,7 @@
 <li><p>如果部署后出现白板，在_config.yml 编辑如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;github.com&#x2F;yourID&#x2F;blog</span><br><span class="line">root: &#x2F;blog&#x2F;</span><br></pre></td></tr></table></figure>
 
+
 </li>
 </ol>
 
@@ -183,7 +184,7 @@
 </div>
 
 </div>
-
+<div class="comment"><div id="comments"></div></div>
 <footer>
   <div>
   Copyright &copy; 2019.<a href="/blog/">迷凝相望</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
@@ -265,6 +266,26 @@
 }());
 </script>
 
+<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'EUwMACVmhwraF3qQFnfxb3hs-gzGzoHsz',
+    appKey: 'onhYV6hYakWlevYTE660cgyw',
+    placeholder: '此处留言……',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-CN' || 'zh-cn'
+  });
+</script>
 
 </body>
 </html>
