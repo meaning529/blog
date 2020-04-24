@@ -44,6 +44,21 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+</script>
 
 <body>
   <header style="height: 70vh;">
@@ -126,6 +141,7 @@
           <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
+              <!-- <p id="hitokoto">:D 获取中...</p> -->
             </span>
 
             
@@ -246,6 +262,40 @@ nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:4000 (LISTEN)</code></pr
             </div>
 
             
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script defer src="https://cdn.staticfile.org/valine/1.4.4/Valine.min.js" ></script>
+
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        el: "#vcomments",
+        app_id: "EUwMACVmhwraF3qQFnfxb3hs-gzGzoHsz",
+        app_key: "onhYV6hYakWlevYTE660cgyw",
+        placeholder: "说点什么",
+        path: window.location.pathname,
+        avatar: "monsterid",
+        meta: ["nick","mail"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: false,
+        recordIP: false,
+        serverURLs: "",
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
           </div>
         </div>
       </div>
@@ -339,9 +389,9 @@ nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:4000 (LISTEN)</code></pr
 
     
   </div>
-<div class="text-center">
-  <span id="timeDate">载入天数...</span>
-  <span id="times">载入时分秒...</span>
+  <div class="text-center">
+     <span id="timeDate"></span>
+  </div>
   <script>
   var now = new Date();
   function createtime(){
@@ -364,12 +414,10 @@ nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:4000 (LISTEN)</code></pr
       if(String(snum).length ==1 ){
                 snum = "0" + snum;
       }
-      document.getElementById("timeDate").innerHTML = "本站点已存在&nbsp"+dnum+"&nbsp天";
-      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+      document.getElementById("timeDate").innerHTML = "本站已存活&nbsp"+dnum+"&nbsp天";
   }
   setInterval("createtime()",250);
   </script>
-</div>
 
 </footer>
 
