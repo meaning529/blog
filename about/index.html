@@ -49,16 +49,27 @@
 <!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
 <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+
 <!--End-->
 <script>
-  fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto')
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
+  // var xhr = new XMLHttpRequest();
+  // xhr.open('get', 'https://v1.hitokoto.cn/?c=k&encode=text');
+  // xhr.onreadystatechange = function () {
+  //   if (xhr.readyState === 4) {
+  //     var data = xhr.responseText;
+  //     var hitokoto = document.getElementById('hitokoto');
+  //     hitokoto.innerText = data;
+  //     // var data = JSON.parse(xhr.responseText);
+  //     // var hitokoto = document.getElementById('hitokoto');
+  //     // hitokoto.innerText = data.hitokoto;
+  //   }
+  // }
+  // xhr.send();
+  
 </script>
+
+
+
 
 <body>
   <header style="height: 70vh;">
@@ -134,15 +145,18 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('https://s1.ax1x.com/2020/04/29/JTz7l9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.6)">
           <div class="container text-center white-text fadeInUp">
+            <!-- <span class="h2" id="hitokoto">
+              
+            </span> -->
             <span class="h2" id="subtitle">
               
-              <!-- <p id="hitokoto">:D 获取中...</p> -->
             </span>
+
 
             
           </div>
@@ -219,12 +233,12 @@
     new APlayer({
       container: document.getElementById('aplayer'),
       fixed: true,
-      autoplay: 'false' === 'true',
+      autoplay: 'true' === 'true',
       loop: 'all',
       order: 'random',
       theme: '#b7daff',
       preload: 'none',
-      audio: [{"name":"name","artist":"artist","url":"/songs/test.mp3","cover":"/img/cover.jpg"},{"name":"name","artist":"artist","url":"https://...url.mp3","cover":"https://...cover.jpg"}]
+      audio: [{"name":"Soil of His Tears","artist":"麗美","url":"http://music.163.com/song/media/outer/url?id=22712639","cover":"https://s1.ax1x.com/2020/04/29/J7PJbR.png"},{"name":"His Smile","artist":"麗美","url":"http://music.163.com/song/media/outer/url?id=22712631","cover":"https://s1.ax1x.com/2020/04/29/J7PJbR.png"},{"name":"Letter of No Return","artist":"麗美","url":"http://music.163.com/song/media/outer/url?id=22712640","cover":"https://s1.ax1x.com/2020/04/29/J7PJbR.png"},{"name":"Flow In The Wind","artist":"麗美","url":"http://music.163.com/song/media/outer/url?id=22712628","cover":"https://s1.ax1x.com/2020/04/29/J7PJbR.png"}]
     });
   }
 </script>
@@ -234,13 +248,17 @@
   
 
   <footer class="mt-5">
-  <div class="text-center py-3">
+  <div class="text-center" style="font-size: larger;">
     <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span style="color: seagreen;">Hexo</span></a>
       <i class="iconfont icon-love"></i>
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
+        <span style="color: coral;">Fluid</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://meaning529.github.io/blog" target="_blank" rel="nofollow noopener">
+      <span style="color:cornflowerblue">Woodyy</span>
+      </a>
+      </div>
     
 
     
@@ -249,6 +267,9 @@
   </div>
   <div class="text-center">
      <span id="timeDate"></span>
+  </div>
+  <div class="text-center">
+    <p id="hitokoto"></p>
   </div>
   <script>
   var now = new Date();
@@ -311,7 +332,7 @@
         "关于我&nbsp;",
       ],
       cursorChar: "_",
-      typeSpeed: 70,
+      typeSpeed: 100,
       loop: false,
     });
     typed.stop();
@@ -360,6 +381,8 @@
 
 
 
+  
+  
 
 
 
@@ -371,5 +394,6 @@
 
 
 
-<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":220,"height":500},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
